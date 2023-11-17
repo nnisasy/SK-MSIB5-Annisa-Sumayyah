@@ -17,10 +17,12 @@ if ($_FILES["fileToUpload"]["size"] != 0) {   // Jika browse image di tekan maka
     } else {
         echo "Sorry, there was an error uploading your file.<br>";
     }
+
+    $result = mysqli_query($conn, "UPDATE `buket` set `nama_buket` = '$nama_buket', `id_kategori` = '$kategori', `id_sizebuket` = '$sizebuket', `id_status` = '$status', `harga` = '$harga', `gambar`= '$target_file' where `id_buket` = '$_GET[id_buket]'");
 }
 
 // echo "UPDATE `buket` set `nama_buket` = '$nama_buket', `id_kategori` = '$kategori', `id_sizebuket` = '$sizebuket', `id_status` = '$status', `harga` = '$harga', `gambar`= '$target_file' where `id_buket` = '$_GET[id_buket]'";
 
-$result = mysqli_query($conn, "UPDATE `buket` set `nama_buket` = '$nama_buket', `id_kategori` = '$kategori', `id_sizebuket` = '$sizebuket', `id_status` = '$status', `harga` = '$harga', `gambar`= '$target_file' where `id_buket` = '$_GET[id_buket]'");
+$result = mysqli_query($conn, "UPDATE `buket` set `nama_buket` = '$nama_buket', `id_kategori` = '$kategori', `id_sizebuket` = '$sizebuket', `id_status` = '$status', `harga` = '$harga' where `id_buket` = '$_GET[id_buket]'");
 
 header("Location:index.php");

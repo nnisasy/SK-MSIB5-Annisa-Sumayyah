@@ -66,7 +66,7 @@ include 'main.php';
                                     <td> <img src="<?php echo $data["gambar"] ?>" width="100"> </td>
                                     <td> <?php echo $data["nama_kategori"] ?> </td>
                                     <td> <?php echo $data["nama_size"] ?></td>
-                                    <td> <?php echo $data["nama_status"] ?></td>
+                                    <td> <span class="badge text-bg-<?php echo generateBadge($data["nama_status"]) ?>"><?php echo $data["nama_status"] ?></span></td>
                                     <td> <?php echo "Rp. " . number_format($data["harga"], 0, ',', '.') ?></td>
                                     <td>
                                         <a href="edit.php?id_buket=<?php echo $data["id_buket"] ?>" class="btn btn-warning btn-sm text-white"><i class="bi-pencil-square"></i></a>
@@ -74,7 +74,7 @@ include 'main.php';
                                     </td>
                                 </tr>
                             <?php $no++;
-                            }; ?>
+                            } ?>
                         <?php } ?>
                     </tbody>
                 </table>
@@ -84,6 +84,28 @@ include 'main.php';
         </div>
     </div>
 </div>
+
+<?php
+function generateBadge($status)
+{
+    switch ($status) {
+        case "Available":
+            $style = "primary";
+            break;
+        case "Restock":
+            $style = "warning";
+            break;
+        case "Unavailable":
+            $style = "danger";
+            break;
+        default:
+            $style = "default";
+            break;
+    }
+
+    return $style;
+}
+?>
 
 <script>
     $(document).ready(function() {

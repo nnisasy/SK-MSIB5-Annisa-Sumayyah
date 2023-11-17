@@ -61,7 +61,8 @@ while ($b = mysqli_fetch_array($buket)) {
                         <div class="row mb-4">
                             <label class="col-sm-2 col-form-label">Gambar</label>
                             <div class="col-sm-10">
-                                <input type="file" id="fileToUpload" name="fileToUpload" class="form-control" value="<?php echo $gambar ?>">
+                                <img src="../admin/<?php echo $gambar ?>" width="100">
+                                <input type="file" id="fileToUpload" name="fileToUpload" class="form-control">
                             </div>
                         </div>
                         <div class="row mb-4">
