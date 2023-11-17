@@ -28,12 +28,12 @@ while ($b = mysqli_fetch_array($buket)) {
                 <h1>Produk<small style="font-size: 14px;"> Data Buket</small></h1>
             </div>
 
-            <!-- MENU CREATE  -->
+            <!-- MENU CREATE START -->
             <div class="card" style="margin-top: 30px; margin-bottom: 30px;">
                 <div class="card-body">
                     <h3>Form Edit</h3><br>
 
-                    <!-- FORM CREATE DATA -->
+                    <!-- FORM CREATE DATA START-->
                     <form action="proses_edit.php?id_buket=<?php echo $id_buket ?>" method="post" enctype="multipart/form-data">
                         <div class="row mb-4">
                             <label class="col-sm-2 col-form-label">Nama Buket</label>
@@ -113,8 +113,10 @@ while ($b = mysqli_fetch_array($buket)) {
                             <a href="index.php" class="btn btn-danger">Kembali</a>
                         </div>
                     </form>
+                    <!-- FORM CREATE DATA END-->
                 </div>
             </div>
+            <!-- MENU CREATE END -->
         </main>
     </div>
 </div>
